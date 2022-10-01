@@ -4,8 +4,16 @@ public enum Gender {
 
     FEMALE("Female"), MALE("Male");
 
-    Gender(String female) {
+    private  String value;
+
+    Gender(String value) {
+        this.value=value;
     }
+
+    public String getValue(){
+        return value;
+    }
+
 }
 
 

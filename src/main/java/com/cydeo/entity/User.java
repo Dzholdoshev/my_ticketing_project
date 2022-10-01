@@ -9,14 +9,14 @@ import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
-
+//@AllArgsConstructor // we have to create constructor manually with "super"  keyword
 public class User extends BaseEntity {
 
     private String firstName;
     private String lastName;
     private String userName;
     private String passWord;
-    private boolean enabled;
+    private boolean enabled; //activated account
     private String phone;
     private Role role;
     private Gender gender;
