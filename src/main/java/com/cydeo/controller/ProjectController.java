@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
@@ -88,6 +90,18 @@ public class ProjectController {
 
 
 
+    @GetMapping("/manager/project-status")
+    public String getProjectByManager(Model model){
 
+        UserDTO manager = userService.findById("john@cydeo.com");
+
+        List<ProjectDTO> projects = projectService.getCountedListOfProjectDTO(manager);
+
+
+        model.addAttribute("projects",projects);
+
+
+        return "/manager/project-status";
+    }
 
 }
